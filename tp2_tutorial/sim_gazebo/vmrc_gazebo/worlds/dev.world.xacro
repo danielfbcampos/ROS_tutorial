@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<!-- World containing sandisland model and some course challenges -->
+<sdf version="1.6" xmlns:xacro="http://ros.org/wiki/xacro">
+  <world name="cras_dev">
+    <xacro:include filename="$(find vmrc_gazebo)/worlds/sandisland.xacro" />
+    <xacro:sandisland />
+    <include>
+      <name>buoy_0</name>
+      <uri>model://robotx_light_buoy</uri>
+      <pose>0 10 0.25 0 0 0</pose>
+    </include>
+
+    <include>
+      <name>buoy_1</name>
+      <uri>model://robotx_light_buoy</uri>
+      <pose>0 -10 0.25 0 0 0</pose>
+    </include>
+
+    <include>
+      <name>totem_0</name>
+      <uri>model://green_totem</uri>
+      <pose>10 1 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <name>totem_1</name>
+      <uri>model://green_totem</uri>
+      <pose>-10 -1 0 0 0 0</pose>
+    </include>
+
+  </world>
+</sdf>

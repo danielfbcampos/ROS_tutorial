@@ -24,7 +24,8 @@
 void cbTwist(const geometry_msgs::Twist& msg)
 {
   std_msgs::Float32 left, right;
-  left.data = right.data = msg.linear.x;
+  left.data = msg.linear.x - 0.6*msg.angular.z;
+  right.data = msg.linear.x + 0.6*msg.angular.z;
   pub_left.publish(left);
   pub_right.publish(right);
 }
